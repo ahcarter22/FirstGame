@@ -4,7 +4,7 @@ age = int(input("What is your age? "))
 
 print("Hello", name, "you are", age, "years old")
 
-health = 15
+health = 10
 
 print("You are starting with", health, "health")
 
@@ -21,18 +21,25 @@ if age >= 18:
           if ans == "around":
               print("You went around and reached the other side of the lake")
           elif ans == "across":
-              print("You managed to get across, but were but by a fish and lost 5 health.")
+              print("You managed to get across, but were bit by a snake and lost 5 health.")
               health -= 5
 
+          ans = input("You notice a house and a river. Which do you go to(river/house)? ")
+          if ans == "house":
+              print("You got to the house and are greeted by the owner...He doesn't like you and you lose 5 health")
+              health -= 5
+              
+              if health <= 0:
+                print("You now have 0 health and you lost the game...")
+              else:
+                  print("You have survived...You win")
+             
           else:
-            print("You lost.")
+                  print("You fell in the river and lost...")
       else:
-          print("You fell down and lost...")
+            print("You fell down and lost.")
     else:
         ("Cya")
-
-
-
 else:
     print("You are not old enough to play...")
 
